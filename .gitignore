@@ -1,0 +1,5 @@
+build
+*.class
+/repo/lib/tcs/configuration_manager/
+/repo/components/configuration_manager/log
+/repo/components/configuration_manager/test_files/accuracy*

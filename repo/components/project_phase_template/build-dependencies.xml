@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="dist" name="Dependency Import">
+    <!--property file defining the component's dependencies-->
+	<property file="../versions.properties"/>
+    <!--Properties used in compile_targets ANT target for JDK version x-->
+    <property name="component.target" value="1.5"/>
+    <property name="component.bootclasspath" value="${java_1_5_bootclasspath}"/>
+   
+    <!--3rd party dependencies-->
+    <property name="junit.jar" value="${ext_libdir}/junit/4.6/junit.jar"/>
+    <property name="jaxb-api.jar" value="${ext_libdir}/jaxb-ri/2.1.2/lib/jaxb-api.jar"/>
+    <property name="ifxjdbc.jar" value="${ext_libdir}/informix/1.4.1/ifxjdbc.jar"/>
+    <property name="xercesImpl.jar" value="${ext_libdir}/xerces/2.9.0/xercesImpl.jar"/>
+    <!--Path declarations which are to be used in the master build file.-->
+    <path id="component.tcs-dependencies">
+        <pathelement location="${base_exception.jar}"/>
+        <pathelement location="${typesafe_enum.jar}"/>
+        <pathelement location="${db_connection_factory.jar}"/>
+        <pathelement location="${configuration_manager.jar}"/>
+        <pathelement location="${configuration_api.jar}"/>
+        <pathelement location="${configuration_persistence.jar}"/>
+        <pathelement location="${object_factory.jar}"/>
+        <pathelement location="${object_factory_config_manager_plugin.jar}"/>
+        <pathelement location="${project_phases.jar}"/>
+        <pathelement location="${workdays.jar}"/>
+        <pathelement location="${command_line_utility.jar}"/>
+        <pathelement location="${xercesImpl.jar}"/>
+    </path>
+    <path id="component.3rdParty-dependencies">
+      	<pathelement location="${jaxb-api.jar}"/>
+    </path>
+    <path id="component.test.3rdParty-dependencies">
+        <pathelement location="${junit.jar}"/>
+        <pathelement location="${ifxjdbc.jar}" />
+    </path>
+</project>

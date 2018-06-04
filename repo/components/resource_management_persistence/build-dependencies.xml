@@ -1,0 +1,38 @@
+<project name="Dependency Import" default="dist" basedir=".">
+	<!-- property file defining the component's dependencies -->
+	<property file="../versions.properties"/>
+	<!-- Properties used in compile_targets ANT target for JDK version x -->
+	<property name="component.target" value="1.5" />
+	<property name="component.bootclasspath" value="${java_1_5_bootclasspath}" />
+
+    <!-- 3rd Party Dependencies  -->
+    <property name="junit.jar" value="${ext_libdir}/junit/3.8.2/junit.jar"/>
+    <property name="javaee.jar" value="${ext_libdir}/javaee/1.5/javaee.jar"/>
+    <property name="ifxjdbc.jar" value="${ext_libdir}/informix/1.4.1/ifxjdbc.jar"/>
+
+
+	<path id="component.tcs-dependencies">
+		<pathelement location="${configuration_manager.jar}" />
+		<pathelement location="${search_builder.jar}" />
+		<pathelement location="${database_abstraction.jar}" />
+		<pathelement location="${db_connection_factory.jar}" />
+		<pathelement location="${id_generator.jar}" />
+		<pathelement location="${logging_wrapper.jar}" />
+		<pathelement location="${object_factory.jar}" />
+		<pathelement location="${resource_management.jar}" />
+		<pathelement location="${base_exception.jar}" />
+		<pathelement location="${typesafe_enum.jar}" />
+		<pathelement location="${object_formatter.jar}" />
+		<pathelement location="${configuration_api.jar}" />
+	</path>
+
+	<path id="component.3rdParty-dependencies">
+		<pathelement location="${ifxjdbc.jar}" />
+		<pathelement location="${javaee.jar}" />
+	</path>
+
+	<path id="component.test.3rdParty-dependencies">
+		<pathelement location="${junit.jar}" />
+	</path>
+
+</project>

@@ -1,0 +1,31 @@
+<project name="Dependency Import" default="dist" basedir=".">
+    <!-- property file defining the component's dependencies -->
+	<property file="../versions.properties"/>
+    <!-- Properties used in compile_targets ANT target for JDK version x -->
+    <property name="component.target" value="1.5"/>
+    <property name="component.bootclasspath" value="${java_1_5_bootclasspath}"/>
+	
+	<!-- 3rd party dependencies -->
+    <property name="junit.jar" value="${ext_libdir}/junit/3.8.2/junit.jar" />
+    <property name="informix.jar" value="${ext_libdir}/ifxjdbc.jar" />
+        
+    <path id="component.tcs-dependencies">                
+		    <pathelement location="${configuration_manager.jar}" />
+	     	<pathelement location="${database_abstraction.jar}" />
+	    	<pathelement location="${db_connection_factory.jar}" />
+	    	<pathelement location="${deliverable_management.jar}" />
+	    	<pathelement location="${logging_wrapper.jar}" />
+	    	<pathelement location="${search_builder.jar}" />
+	    	<pathelement location="${object_formatter.jar}" />
+		    <pathelement location="${base_exception.jar}" />
+    </path>
+    
+    <path id="component.3rdParty-dependencies">   
+    </path>
+
+    <path id="component.test.3rdParty-dependencies">
+        <pathelement location="${junit.jar}"/>
+        <pathelement location="${informix.jar}"/>
+    </path>
+
+</project>

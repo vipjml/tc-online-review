@@ -1,0 +1,86 @@
+set -e
+components=(
+	base_exception
+	configuration_manager
+	object_factory
+	object_factory_config_manager_plugin
+	memory_usage
+	compression_utility
+	simple_cache
+	authentication_factory
+	class_associations
+	command_line_utility
+	configuration_api
+	configuration_persistence
+	db_connection_factory
+	database_abstraction
+	data_validation
+	type_safe_enum
+	object_formatter
+	logging_wrapper
+	id_generator
+	class_associations
+	ldap_sdk_interface
+	search_builder
+	project_management
+	deliverable_management
+	deliverable_management_persistence
+	configuration_persistence
+	object_factory_config_api_plugin
+	distribution_tool
+	command_line_utility
+	document_generator
+	email_engine
+	executable_wrapper
+	heartbeat
+	guid_generator
+	ip_server
+	file_system_server
+	file_upload
+	jndi_context_utility
+	job_scheduling
+	job_processor
+	late_deliverables_management
+	user_project_data_store
+	workdays
+	project_phases
+	phase_management
+	resource_management
+	phase_management_persistence
+	project_management_persistence
+	resource_management_persistence
+	late_deliverables_tracker
+	auto_pilot
+	contest_eligibility_persistence
+	contest_eligibility_validation
+	review_data_structure
+	scorecard_data_structure
+	scorecard_management
+	scorecard_management_persistence
+	review_score_aggregator
+	weighted_calculator
+	review_score_calculator
+	project_phase_template
+	review_management
+	online_review_ajax_support
+	online_review_deliverables
+	online_review_login
+	terms_of_use
+	review_feedback_management
+	online_review_phases
+	online_review_upload_services
+	topcoder_commons_utility
+	project_payment_calculator
+	project_payment_management
+	review_application_management
+	review_assignment
+	review_management_persistence
+	)
+	
+for component in "${components[@]}"
+do
+	echo ${component}
+	pushd ${component}
+	ant deploy-lib
+	popd
+done

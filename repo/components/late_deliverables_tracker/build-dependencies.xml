@@ -1,0 +1,71 @@
+<project name="Dependency Import" basedir=".">
+    <!-- property file defining the component's dependencies -->
+	<property file="../versions.properties"/>
+    <!-- Properties used in compile_targets ANT target for JDK version x -->
+    <property name="component.target" value="1.5"/>
+    <property name="component.bootclasspath" value="${java_1_5_bootclasspath}"/>
+
+    <!-- 3rd party dependencies -->
+    <property name="junit.jar" value="${ext_libdir}/junit/4.6/junit-4.6.jar"/>
+
+    <property name="log4j.jar" value="${ext_libdir}/log4j.jar"/>
+    
+    <property name="ifxjdbc.jar" value="${ext_libdir}/informix/1.4.1/ifxjdbc.jar"/>
+    <property name="javamail.jar" value="${ext_libdir}/javamail/javamail.jar"/>
+    <property name="activation.jar" value="${ext_libdir}/javamail/1.4.3/activation.jar"/>
+    <property name="imap.jar" value="${ext_libdir}/javamail/1.4.3/lib/imap.jar"/>
+    <property name="mailapi.jar" value="${ext_libdir}/javamail/1.4.3/lib/mailapi.jar"/>
+    <property name="pop3.jar" value="${ext_libdir}/javamail/1.4.3/lib/pop3.jar"/>
+    <property name="smtp.jar" value="${ext_libdir}/javamail/1.4.3/lib/smtp.jar"/>
+
+    <path id="component.tcs-dependencies">
+        <pathelement location="${email_engine.jar}"/>
+        <pathelement location="${document_generator.jar}"/>
+        <pathelement location="${command_line_utility.jar}"/>
+        <pathelement location="${job_scheduling.jar}"/>
+        <pathelement location="${job_processor.jar}"/>
+        <pathelement location="${user_project_data_store.jar}"/>
+        <pathelement location="${project_management.jar}"/>
+        <pathelement location="${phase_management.jar}"/>
+        <pathelement location="${deliverable_management.jar}"/>
+        <pathelement location="${project_phases.jar}"/>
+        <pathelement location="${resource_management.jar}"/>
+        <pathelement location="${late_deliverables_management.jar}"/>
+        <pathelement location="${base_exception.jar}"/>
+        <pathelement location="${configuration_api.jar}"/>
+        <pathelement location="${configuration_persistence.jar}"/>
+        <pathelement location="${search_builder.jar}"/>
+        <pathelement location="${database_abstraction.jar}"/>
+        <pathelement location="${logging_wrapper.jar}"/>
+        <pathelement location="${db_connection_factory.jar}"/>
+        <pathelement location="${object_factory.jar}"/>
+        <pathelement location="${object_factory_configuration_api_plugin.jar}"/>
+        <pathelement location="${configuration_manager.jar}"/>
+        <pathelement location="${object_formatter.jar}"/>
+        <pathelement location="${typesafe_enum.jar}"/>
+        <pathelement location="${data_validation.jar}"/>
+        <pathelement location="${class_associations.jar}"/>
+        <pathelement location="${workdays.jar}"/>
+        <pathelement location="${id_generator.jar}"/>
+        <pathelement location="${executable_wrapper.jar}"/>
+        <pathelement location="${deliverable_management_persistence.jar}"/>
+        <pathelement location="${phase_management_persistence.jar}"/>
+        <pathelement location="${project_management_persistence.jar}"/>
+        <pathelement location="${resource_management_persistence.jar}"/>
+    </path>
+    
+    <path id="component.3rdParty-dependencies">
+        <pathelement location="${log4j.jar}"/>
+        <pathelement location="${javamail.jar}"/>
+        <pathelement location="${activation.jar}"/>
+        <pathelement location="${imap.jar}"/>
+        <pathelement location="${mailapi.jar}"/>
+        <pathelement location="${pop3.jar}"/>
+        <pathelement location="${smtp.jar}"/>
+    </path>
+    <path id="component.test.3rdParty-dependencies">
+        <pathelement location="${junit.jar}"/>
+        <pathelement location="${ifxjdbc.jar}"/>
+    </path>
+
+</project>

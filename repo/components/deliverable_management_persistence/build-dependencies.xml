@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="dist" name="Dependency Import">
+	<property file="../versions.properties"/>
+	<!--property file defining the component's dependencies-->
+	<!--Properties used in compile_targets ANT target for JDK version x-->
+	<property name="component.target" value="1.5" />
+	<property name="component.bootclasspath" value="${java_1_5_bootclasspath}" />
+	
+	<!--3rd party dependencies-->
+	<property name="informix.jar" value="${ext_libdir}/informix/1.4.1/ifxjdbc.jar" />
+	<property name="junit.jar" value="${ext_libdir}/junit/3.8.2/junit.jar" />
+	<!--Path declarations which are to be used in the master build file.-->
+	<path id="component.tcs-dependencies">
+		<pathelement location="${base_exception.jar}" />
+		<pathelement location="${configuration_manager.jar}" />
+		<pathelement location="${data_validation.jar}" />
+		<pathelement location="${database_abstraction.jar}" />
+		<pathelement location="${db_connection_factory.jar}" />
+		<pathelement location="${id_generator.jar}" />
+		<pathelement location="${logging_wrapper.jar}" />
+		<pathelement location="${object_factory.jar}" />
+		<pathelement location="${search_builder.jar}" />
+		<pathelement location="${class_associations.jar}"/>
+		<pathelement location="${configuration_api.jar}"/> 
+		<pathelement location="${object_factory_config_manager_plugin.jar}"/>
+		<pathelement location="${object_formatter.jar}"/>
+		<pathelement location="${typesafe_enum.jar}"/>
+		<pathelement location="${deliverable_management.jar}"/>
+		<pathelement location="${project_management.jar}"/>
+	</path>
+	<path id="component.3rdParty-dependencies">
+		<pathelement location="${informix.jar}" />
+	</path>
+	<path id="component.test.3rdParty-dependencies">
+		<pathelement location="${junit.jar}" />
+	</path>
+</project>
